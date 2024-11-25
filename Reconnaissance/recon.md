@@ -2,4 +2,4 @@
 
 ## Table of Contents
 
-* [My favorite fuzzing tools written in go](#"ffuf")
+* [My favorite fuzzing tool written in go](#"ffuf")

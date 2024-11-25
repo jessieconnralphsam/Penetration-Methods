@@ -1,0 +1,49 @@
+-H: Add Custom Headers
+
+The -H option is used to include specific HTTP headers in your requests. Headers are like extra labels on a package that give the server extra information.
+
+- Some websites require certain headers (like authentication tokens or cookies) to access restricted parts.
+- You can fake being a specific browser or user.
+
+example usage:
+
+ffuf -w wordlist.txt -u https://example.com/FUZZ -H "User-Agent: Mozilla/5.0"
+
+multiple header:
+
+ffuf -w wordlist.txt -u https://example.com/FUZZ -H "Authorization: Bearer token123" -H "Accept: application/json"
+
+list of all user-agents:
+
+Chrome (Windows):
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.89 Safari/537.36
+
+Chrome (Mac):
+Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.89 Safari/537.36
+
+Firefox (Windows):
+Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:118.0) Gecko/20100101 Firefox/118.0
+
+Firefox (Mac):
+Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2; rv:118.0) Gecko/20100101 Firefox/118.0
+
+Safari (Mac):
+Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15
+
+Edge:
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.89 Safari/537.36 Edg/118.0.2088.46
+
+Chrome (Android):
+Mozilla/5.0 (Linux; Android 13; Pixel 6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.89 Mobile Safari/537.36
+
+Safari (iOS):
+Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1
+
+Googlebot:
+Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+
+Bingbot:
+Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)
+
+DuckDuckGo Bot:
+Mozilla/5.0 (compatible; DuckDuckBot/1.1; +http://duckduckgo.com/duckduckbot.html)

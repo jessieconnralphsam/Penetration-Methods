@@ -4,3 +4,6 @@ LOOKING FOR SPECIFIC RESPONSES:
 ffuf -w wordlist.txt -u https://example.com/FUZZ -mc 200
 SEARCHING INSIDE SITE DATA:
 ffuf -w params.txt -u https://example.com/?search=FUZZ -mr "found"
+
+ 
+

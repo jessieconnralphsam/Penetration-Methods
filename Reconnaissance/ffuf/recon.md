@@ -1,4 +1,4 @@
-![ffuf mascot](_img/ffuf_run_logo_600.png)
+![ffuf mascot](https://www.acceis.fr/wp-content/uploads/2022/08/ffuf_run_logo_600.png)
 # ffuf - Fuzz Faster U Fool
 
 A fast web fuzzer written in Go.

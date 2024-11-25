@@ -1,9 +1,68 @@
 FINDING SECRET PATHS:
 ffuf -w wordlist.txt -u https://example.com/FUZZ
+
 LOOKING FOR SPECIFIC RESPONSES:
 ffuf -w wordlist.txt -u https://example.com/FUZZ -mc 200
+
 SEARCHING INSIDE SITE DATA:
 ffuf -w params.txt -u https://example.com/?search=FUZZ -mr "found"
 
- 
+BRUTEFORCING PARAMETERS:
+ffuf -w params.txt -u https://example.com/?FUZZ=value
 
+FIND BACKUP FILES:
+ffuf -w backups.txt -u https://example.com/FUZZ -e ~,.bak,.zip,.tar.gz
+
+DIRECTORY AND FILE DISCOVERY:
+ffuf -w directories.txt -u https://example.com/FUZZ -e .php,.html,.txt
+
+HEADER INJECTION FUZZING:
+ffuf -w headers.txt -u https://example.com/ -H "FUZZ: value"
+
+POST DATA FUZZING:
+ffuf -w postdata.txt -u https://example.com/login -X POST -d "username=admin&password=FUZZ"
+
+TESTING FOR SUBDOMAIN ENUMERATION:
+ffuf -w subdomains.txt -u https://FUZZ.example.com/
+
+VIRTUAL HOST DISCOVERY:
+ffuf -w hosts.txt -u https://example.com -H "Host: FUZZ"
+
+DETECTING SQL INJECTION POINTS:
+ffuf -w sqli.txt -u https://example.com/page.php?id=FUZZ -mr "syntax error"
+
+FUZZING COOKIES:
+ffuf -w cookies.txt -u https://example.com/ -H "Cookie: session=FUZZ"
+
+RATE LIMITING BYPASS:
+ffuf -w wordlist.txt -u https://example.com/FUZZ -t 2
+
+RECURSIVE FUZZING:
+ffuf -w wordlist.txt -u https://example.com/FUZZ -recursion
+
+MATCH BY RESPONSE SIZE:
+ffuf -w wordlist.txt -u https://example.com/FUZZ -fs 1024
+
+FILTER RESPONSES BY SIZE:
+ffuf -w wordlist.txt -u https://example.com/FUZZ -fs 0
+
+FILTER RESPONSES BY HTTP CODE:
+ffuf -w wordlist.txt -u https://example.com/FUZZ -fc 404
+
+BLIND COMMAND INJECTION:
+ffuf -w payloads.txt -u https://example.com/page.php?id=FUZZ -mr "command executed"
+
+USING PROXY FOR DEBUGGING:
+ffuf -w wordlist.txt -u https://example.com/FUZZ -x http://127.0.0.1:8080
+
+ADVANCED MATCH AND FILTER:
+ffuf -w wordlist.txt -u https://example.com/FUZZ -mr "keyword" -fc 403
+
+USING MULTIPLE WORDLISTS:
+ffuf -w wordlist1.txt:W1 -w wordlist2.txt:W2 -u https://example.com/W1/W2
+
+OUTPUT RESULTS TO A FILE:
+ffuf -w wordlist.txt -u https://example.com/FUZZ -o results.json -of json
+
+CUSTOMIZING USER-AGENT:
+ffuf -w wordlist.txt -u https://example.com/FUZZ -H "User-Agent: CustomAgent"

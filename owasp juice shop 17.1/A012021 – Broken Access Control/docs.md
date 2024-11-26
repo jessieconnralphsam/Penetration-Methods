@@ -3,18 +3,12 @@ Moving up from the fifth position, 94% of applications were tested for some form
 
 Access control enforces policy such that users cannot act outside of their intended permissions. Failures typically lead to unauthorized information disclosure, modification, or destruction of all data or performing a business function outside the user's limits. Common access control vulnerabilities include:
 
-    - Violation of the principle of least privilege or deny by default, where access should only be granted for particular capabilities, roles, or users, but is available to anyone.
+### Common Access Control Vulnerabilities
 
-Bypassing access control checks by modifying the URL (parameter tampering or force browsing), internal application state, or the HTML page, or by using an attack tool modifying API requests.
-
-Permitting viewing or editing someone else's account, by providing its unique identifier (insecure direct object references)
-
-Accessing API with missing access controls for POST, PUT and DELETE.
-
-Elevation of privilege. Acting as a user without being logged in or acting as an admin when logged in as a user.
-
-Metadata manipulation, such as replaying or tampering with a JSON Web Token (JWT) access control token, or a cookie or hidden field manipulated to elevate privileges or abusing JWT invalidation.
-
-CORS misconfiguration allows API access from unauthorized/untrusted origins.
-
-Force browsing to authenticated pages as an unauthenticated user or to privileged pages as a standard user.
+* Violation of least privilege principle
+* Bypassing access control checks
+* Insecure direct object references
+* Missing access controls for API requests
+* Elevation of privilege
+* Metadata manipulation
+* CORS misconfiguration and force browsing
